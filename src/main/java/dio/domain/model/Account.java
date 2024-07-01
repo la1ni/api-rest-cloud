@@ -15,12 +15,12 @@ public class Account {
 
     private String agency;
 
-    // scale indica quantos inteiros e precision, quantos decimais
-    @Column(name = "additional_limit", scale = 13, precision = 2)
+    // scale indica quantos decimais e precision, quantos inteiros
+    @Column(name = "additional_limit", scale = 2, precision = 13)
     private BigDecimal limit;
 
 
-    @Column(scale = 13, precision = 2)
+    @Column(scale = 2, precision = 13)
     private BigDecimal balance;
 
 
