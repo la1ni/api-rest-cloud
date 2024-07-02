@@ -2,7 +2,7 @@ package dio.domain.model;
 
 import java.util.List;
 
-import jakarta.persistence.*;
+import javax.persistence.*;
 
 @Entity(name = "tb_user")
 public class User {
