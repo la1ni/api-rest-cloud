@@ -3,7 +3,7 @@ package dio.domain.model;
 
 import javax.persistence.*;
 
-// essa anotação torna possível que essa classe seja herdada por outras
+// essa anotação torna possível que essa classe seja herdada por outras. (entretanto, a troca de versão do spring fez com que isso não fosse suportado, então deixando apenas para efeitos de conhecimento)
 @MappedSuperclass
 public abstract class BaseItem {
     @Id

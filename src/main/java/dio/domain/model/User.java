@@ -1,5 +1,8 @@
 package dio.domain.model;
 
+import org.hibernate.annotations.LazyCollection;
+import org.hibernate.annotations.LazyCollectionOption;
+
 import java.util.List;
 
 import javax.persistence.*;
@@ -21,11 +24,13 @@ public class User {
     @OneToOne(cascade = CascadeType.ALL)
     private Card card;
 
-    // Fetch = EAGER indica que quando um usuário do banco for trazido, a lista de features também será
-    @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+    // Fetch = EAGER indica que quando um usuário do banco for trazido, a lista de features também será. teve que ser removido por causa da versão do spring, que teve que ser regredida
+    @OneToMany(cascade = CascadeType.ALL)
+    @LazyCollection(LazyCollectionOption.FALSE)
     private List<Feature> features;
 
-    @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+    @OneToMany(cascade = CascadeType.ALL)
+    @LazyCollection(LazyCollectionOption.FALSE)
     private List<News> news;
 
     public Long getId() {
